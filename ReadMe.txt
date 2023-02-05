@@ -12,3 +12,17 @@ Add Add Program.cs file
 
 a- builder.Services.AddControllers().AddNewtonsoftJson();
 b- builder.Services.AddCors();
+
+//https://jsonpatch.com/ how to send the data 
+/* Pass string in this json fromat [
+                    {
+                    "path": "/createdBy",
+                     "op": "replace",
+                     "value": "Admin"
+                    },
+                    {
+                    "path": "/Alive",
+                    "op": "replace",
+                    "value": "false"
+                    }
+                ]   */  

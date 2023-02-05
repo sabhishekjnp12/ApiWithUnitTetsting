@@ -17,10 +17,6 @@ namespace ApiWithUnitTetsting.EFCore
 
             #endregion
 
-            //~UnitOfWork()
-            //{
-            //    Dispose(disposing: false);
-            //}
 
             #region Protected Methods
 
@@ -30,12 +26,10 @@ namespace ApiWithUnitTetsting.EFCore
                 {
                     if (disposing)
                     {
-                        // _contactRepository.dis
                     }
 
                     _disposed = true;
                 }
-                // Call the base class implementation if this class is inherited.
                 base.Dispose(disposing);
             }
 

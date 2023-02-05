@@ -83,17 +83,10 @@ public abstract class EFCoreUnitOfWorkBase : IUnitOfWork, IDisposable
             if (disposing)
             {
                 Context.Dispose();
-                // TODO: dispose (!) managed state (managed objects).
             }
-            // free unmanaged resources (unmanaged objects, like open files, open network connections) and override a finalizer below.
-            // Mostly nothing to do
-
-            // then set large fields to null.
 
             _disposed = true;
         }
-        // Call the base class implementation if this class is inherited.
-        // base.Dispose(disposing);
     }
 
     #endregion
