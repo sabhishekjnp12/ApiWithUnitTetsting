@@ -11,7 +11,7 @@ public interface IRepository<TEntity> where TEntity : class
     /// Adds a specified entity to the repository.
     /// </summary>
     /// <param name="entity">The entity to be added.</param>
-    void Add(TEntity entity);
+    TEntity Add(TEntity entity);
 
     /// <summary>
     /// Asynchronously adds a specified entity to the repository.

@@ -8,6 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddDbContext<UnitTestingContext>();
 builder.Services.AddSingleton<IUserInfromationUnitofWork,UserInfromationUnitofWork>();
+builder.Services.AddSingleton<IEmployeeUnitofWork, EmployeeUnitofWork>();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

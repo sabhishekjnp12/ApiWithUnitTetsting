@@ -37,11 +37,11 @@ public class EFCoreRepository<TEntity> : IRepository<TEntity> where TEntity : cl
 
     #region Public Methods
 
-    public virtual void Add(TEntity entity)
+    public virtual TEntity Add(TEntity entity)
     {
         if (entity == null)
             throw new ArgumentNullException(nameof(entity));
-        dbSet.Add(entity);
+        return dbSet.Add(entity).Entity;
     }
 
     public virtual async Task AddAsync(TEntity entity, CancellationToken cancellationToken = default)

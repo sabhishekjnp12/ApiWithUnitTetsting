@@ -17,6 +17,7 @@ namespace ApiWithUnitTetsting.Context
         {
         }
 
+        public virtual DbSet<Employee> Employees { get; set; } = null!;
         public virtual DbSet<UserInformation> UserInformations { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -30,6 +31,33 @@ namespace ApiWithUnitTetsting.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Employee>(entity =>
+            {
+                entity.HasKey(e => e.Empid);
+
+                entity.ToTable("Employee");
+
+                entity.Property(e => e.Empid).HasColumnName("EMPID");
+
+                entity.Property(e => e.Address)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.CreatedBy)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.CreatedDate).HasColumnType("datetime");
+
+                entity.Property(e => e.FirstName)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.LastName)
+                    .HasMaxLength(10)
+                    .IsFixedLength();
+            });
+
             modelBuilder.Entity<UserInformation>(entity =>
             {
                 entity.ToTable("UserInformation");
