@@ -145,10 +145,22 @@ namespace ApiWithUnitTetsting.Controllers
                     employeeExisting.CreatedDate = employeeNewpatch.CreatedDate;
                     employeeExisting.CreatedBy = employeeNewpatch.CreatedBy;
                     employeeExisting.Alive = employeeNewpatch.Alive;
-                  _employeeUnitofWork.EmployeeDbContext.SaveChanges();
+                    _employeeUnitofWork.EmployeeDbContext.SaveChanges();
                     return Ok(employeeExisting);
                 }
 
+                /* Pass string in this json fromat [
+                    {
+                    "path": "/createdBy",
+                     "op": "replace",
+                     "value": "Admin"
+                    },
+                    {
+                    "path": "/Alive",
+                    "op": "replace",
+                    "value": "false"
+                    }
+                ]   */  
 
             }
             catch (Exception ex)
