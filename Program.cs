@@ -1,5 +1,7 @@
 using ApiWithUnitTetsting.Context;
+using ApiWithUnitTetsting.Handler;
 using ApiWithUnitTetsting.Repositoryes;
+using Microsoft.AspNetCore.Authentication;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,6 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddControllers().AddNewtonsoftJson();
+builder.Services.AddAuthentication("BasicAuthentication").AddScheme<AuthenticationSchemeOptions ,BasicAuthenticationHandler>("BasicAuthentication",null);
 builder.Services.AddCors();
 builder.Services.AddDbContext<UnitTestingContext>();
 builder.Services.AddSingleton<IUserInfromationUnitofWork,UserInfromationUnitofWork>();
@@ -24,6 +27,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

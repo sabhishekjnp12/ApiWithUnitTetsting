@@ -93,7 +93,6 @@ namespace ApiWithUnitTetsting.Controllers
             try
             {
                 var employeeToDelete = _employeeUnitofWork.EmployeeDbContext.Employees.FirstOrDefault(x => x.Empid == id);
-                var employeeToDelete = _employeeUnitofWork.EmployeeDbContext.Employees.FirstOrDefault(x=>x.Empid==id);
                 if (employeeToDelete == null)
                     NotFound($"Record not found with this id={id}");
                 if (employeeToDelete != null)
