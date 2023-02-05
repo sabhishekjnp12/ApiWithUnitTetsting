@@ -249,7 +249,7 @@ public class EFCoreRepository<TEntity> : IRepository<TEntity> where TEntity : cl
         throw new NotImplementedException();
     }
 
-    public virtual void Remove(TEntity entity)
+    public virtual void Remove(TEntity? entity)
     {
         if (entity == null)
             throw new ArgumentNullException(nameof(entity));

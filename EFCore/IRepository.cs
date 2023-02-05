@@ -234,7 +234,7 @@ public interface IRepository<TEntity> where TEntity : class
     /// Removes an existing specified entity.
     /// </summary>
     /// <param name="entity">The entity to be removed.</param>
-    void Remove(TEntity entity);
+    void Remove(TEntity? entity);
 
     /// <summary>
     /// Removes all specified entities in this repository.
