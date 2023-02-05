@@ -93,11 +93,13 @@ namespace ApiWithUnitTetsting.Controllers
             try
             {
                 var employeeToDelete = _employeeUnitofWork.EmployeeDbContext.Employees.FirstOrDefault(x => x.Empid == id);
+                var employeeToDelete = _employeeUnitofWork.EmployeeDbContext.Employees.FirstOrDefault(x=>x.Empid==id);
                 if (employeeToDelete == null)
                     NotFound($"Record not found with this id={id}");
                 if (employeeToDelete != null)
                     _employeeUnitofWork.EmployeeRepo.Remove(employeeToDelete);
                 await _employeeUnitofWork.SaveChangesAsync();
+               await _employeeUnitofWork.SaveChangesAsync();
                 return Ok(employeeToDelete);
 
             }

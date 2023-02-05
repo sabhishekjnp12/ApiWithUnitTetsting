@@ -1,6 +1,10 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "QtrED2dMwoxQ3n7gKUEsmEeoKhQmASYB2CQl7kUNK0BAOYRM54BcTtQjiGtqgUhcL+8Xuv4cY6JimjI685M4PA==",
+=======
+  "dgSpecHash": "7mjc9GTosYCzsVz93DtCEW4Cxr5lzvbcDvScEUOwDdce98Lw6YyMeLCCQd19xEj2VKlGwPgy5BQAEw3WOXeBYQ==",
+>>>>>>> 96cc901cf6c1cff596146d1642f9e0b6f6987d88
   "success": true,
   "projectFilePath": "F:\\Personal\\INTERVIEW\\2023\\ApiWithUnitTetsting\\ApiWithUnitTetsting.csproj",
   "expectedPackageFiles": [
