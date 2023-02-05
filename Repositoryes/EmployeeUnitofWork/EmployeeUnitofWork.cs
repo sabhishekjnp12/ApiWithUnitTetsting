@@ -1,12 +1,15 @@
 ﻿using ApiWithUnitTetsting.Context;
 using ApiWithUnitTetsting.EFCore;
 using ApiWithUnitTetsting.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace ApiWithUnitTetsting.Repositoryes
 {
     public class EmployeeUnitofWork : EFCoreUnitOfWorkBase, IEmployeeUnitofWork
     {
         #region Private Fields
+
+        private UnitTestingContext _employeeDbContext;
 
         private IEmployeeRepo _employeeRepo;
 
@@ -21,6 +24,16 @@ namespace ApiWithUnitTetsting.Repositoryes
         #endregion
 
         #region Public Properties
+
+        public UnitTestingContext EmployeeDbContext
+        {
+            get
+            {
+                if (this._employeeDbContext == null)
+                    this._employeeDbContext = new UnitTestingContext();
+                return _employeeDbContext;
+            }
+        }
 
         public IEmployeeRepo EmployeeRepo
         {
