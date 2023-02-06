@@ -27,16 +27,17 @@ builder.Services.AddAuthentication(option =>
     option.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
     option.DefaultForbidScheme = JwtBearerDefaults.AuthenticationScheme;
 
-}).AddJwtBearer( item =>{
+}).AddJwtBearer(item =>
+{
     item.RequireHttpsMetadata = true;
     item.SaveToken = true;
     item.TokenValidationParameters = new TokenValidationParameters()
     {
         ValidateIssuerSigningKey = true,
         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(authKey)),
-        ValidIssuer=false,
-        ValidAudience=false
-    }
+        ValidIssuer = "false",
+        ValidAudience = "false",
+        ClockSkew = TimeSpan.Zero
     });
 
 #endregion
