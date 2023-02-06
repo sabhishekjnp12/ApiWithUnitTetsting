@@ -40,6 +40,17 @@ Steps
 4- Access and inject the key into the controller
 5- Validate user crendentials based on input request
 
+Role Based Authentication
+Restrication acesss permission based on the roles of individual users.
+
+Steps
+1- Complete the steps for JWT Authentication
+2- Get roles from database using credentials
+3- Add Roles in the claim section of token creation
+4- Add Roles parameter value in Authorize attribute
+
+
+
 
 
 

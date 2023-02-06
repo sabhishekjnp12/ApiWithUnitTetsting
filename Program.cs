@@ -38,7 +38,8 @@ builder.Services.AddAuthentication(option =>
         ValidIssuer = "false",
         ValidAudience = "false",
         ClockSkew = TimeSpan.Zero
-    });
+    };
+});
 
 #endregion
 
