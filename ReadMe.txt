@@ -4,7 +4,7 @@ No on confgire Method
 Scaffold-DbContext "Server=DESKTOP-SFE42UM;Database=UnitTestingDemo;User ID=sa;Password=DBpassword;TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer -NoOnConfiguring -OutputDir Entities -context UnitTestingContext -contextdir Context -force
 
 
-Patch method we can deply to Nuget package manager
+Patch method we can deploy to Nuget package manager
 1- Microsoft.AspNetCore.Mvc.NewtonsoftJson
 2- Microsoft.AspNetCore.JsonPatch
 
